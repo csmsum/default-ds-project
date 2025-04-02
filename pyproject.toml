@@ -1,0 +1,42 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "default_ds_project"
+version = "0.0.1"
+description = "The Default data science cookiecutter on which one can plement data science research. This includes: 1. Poetry, 2. DVC, 3.Wandb etc."
+authors = [
+  { name = "seungmin chou <csmwstat@gmail.com>" },
+]
+license = { file = "LICENSE" }
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License"
+]
+dependencies = [
+    "loguru",
+    "mkdocs",
+    "pip",
+    "pytest",
+    "python-dotenv",
+    "ruff",
+    "tqdm",
+    "typer",
+]
+requires-python = "~=3.10.0"
+
+
+[tool.ruff]
+line-length = 99
+src = ["default_ds_project"]
+include = ["pyproject.toml", "default_ds_project/**/*.py"]
+
+[tool.ruff.lint]
+extend-select = ["I"]  # Add import sorting
+
+[tool.ruff.lint.isort]
+known-first-party = ["default_ds_project"]
+force-sort-within-sections = true
+
