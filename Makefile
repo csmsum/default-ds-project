@@ -53,7 +53,7 @@ test:
 ## Make dataset
 .PHONY: data
 data: requirements
-	$(PYTHON_INTERPRETER) src/dataset.py
+	$(PYTHON_INTERPRETER) default_ds_project/dataset.py
 
 
 #################################################################################
