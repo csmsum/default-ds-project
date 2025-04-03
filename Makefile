@@ -14,10 +14,7 @@ PYTHON_INTERPRETER = python
 ## Install Python dependencies
 .PHONY: requirements
 requirements:
-	pip install -e .
-	
-
-
+	poetry install
 
 ## Delete all compiled Python files
 .PHONY: clean
@@ -56,7 +53,7 @@ test:
 ## Make dataset
 .PHONY: data
 data: requirements
-	$(PYTHON_INTERPRETER) default_ds_project/dataset.py
+	$(PYTHON_INTERPRETER) src/dataset.py
 
 
 #################################################################################

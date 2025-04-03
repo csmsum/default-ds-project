@@ -1,37 +1,44 @@
-[build-system]
-requires = ["flit_core >=3.2,<4"]
-build-backend = "flit_core.buildapi"
 
-[project]
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
 name = "default_ds_project"
 version = "0.0.1"
-description = "The Default data science cookiecutter on which one can plement data science research. This includes: 1. Poetry, 2. DVC, 3.Wandb etc."
-authors = [
-  { name = "seungmin chou <csmwstat@gmail.com>" },
-]
-license = { file = "LICENSE" }
+description = "The Default data science cookiecutter on which one can implement data science research. This includes: 1. Poetry, 2. DVC, 3. Wandb etc."
+authors = ["seungmin chou <csmwstat@gmail.com>"]
+license = "MIT"
 readme = "README.md"
+packages = [{ include = "default_ds_project" }]
+keywords = ["data science", "cookiecutter", "mlops"]
+documentation = "https://your-docs-url.com"
 classifiers = [
-    "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: MIT License"
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License"
 ]
-dependencies = [
-    "loguru",
-    "mkdocs",
-    "pip",
-    "pytest",
-    "python-dotenv",
-    "ruff",
-    "tqdm",
-    "typer",
-]
-requires-python = "~=3.10.0"
+
+[tool.poetry.dependencies]
+python = ">=3.10"
+loguru = "*"
+mkdocs = "*"
+pip = "*"
+pytest = "*"
+python-dotenv = "*"
+ruff = "*"
+tqdm = "*"
+typer = "*"
+
+[tool.poetry.group.dev.dependencies]
+dvc = "*"
+wandb = "*"
+
 
 
 [tool.ruff]
 line-length = 99
-src = ["default_ds_project"]
-include = ["pyproject.toml", "default_ds_project/**/*.py"]
+src = ["src"]
+include = ["pyproject.toml", "src/**/*.py"]
 
 [tool.ruff.lint]
 extend-select = ["I"]  # Add import sorting
