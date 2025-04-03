@@ -39,7 +39,7 @@ The Default data science cookiecutter on which one can plement data science rese
 │
 ├── setup.cfg          <- Configuration file for flake8
 │
-└── default_ds_project   <- Source code for use in this project.
+└── src   <- Source code for use in this project.
     │
     ├── __init__.py             <- Makes default_ds_project a Python module
     │
